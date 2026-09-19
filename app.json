@@ -1,0 +1,33 @@
+{
+  "expo": {
+    "name": "Medição de Som",
+    "slug": "medicao-de-som",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "dark",
+    "plugins": [
+      "expo-audio",
+      "expo-font",
+      "expo-asset"
+    ],
+    "ios": {
+      "supportsTablet": true,
+      "infoPlist": {
+        "NSMicrophoneUsageDescription": "Permita o acesso ao microfone para medir a intensidade do som.",
+        "NSLocationWhenInUseUsageDescription": "Permita o acesso à localização para mostrar onde a medição foi realizada."
+      }
+    },
+    "android": {
+      "adaptiveIcon": {
+        "backgroundColor": "#E6F4FE",
+        "foregroundImage": "./assets/android-icon-foreground.png",
+        "backgroundImage": "./assets/android-icon-background.png",
+        "monochromeImage": "./assets/android-icon-monochrome.png"
+      }
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    }
+  }
+}
