@@ -1,0 +1,25 @@
+Sound & Location Meter
+Aplicativo em React Native com Expo para medição de intensidade sonora, captura de geolocalização e gerenciamento de histórico.
+
+Funcionalidades
+Medição de som ambiente (baixo, médio, alto) via microfone.
+
+Captura de latitude e longitude.
+
+Histórico de medições salvas.
+
+Tecnologias
+React Native / Expo
+
+expo-audio
+
+expo-location
+
+@expo/vector-icons
+
+Permissões
+O aplicativo solicita permissão de uso para:
+
+Microfone
+
+Localização
