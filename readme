@@ -1,16 +1,57 @@
-Motion & Magnetometer Sensors
-Aplicativo em React Native com Expo para medição de intensidade de movimento, leitura do campo magnético e gerenciamento de histórico.
+Sensores de Movimento e Campo Magnetico
+
+Aplicativo em React Native com Expo que mede a intensidade do movimento
+com o acelerometro, mostra a leitura do campo magnetico com o
+magnetometro e guarda as medicoes em um historico.
 
 Funcionalidades
-Medição de intensidade de movimento (baixo, médio, alto) via acelerômetro.
 
-Leitura dos eixos X, Y, Z e intensidade total do campo magnético via magnetômetro.
+Movimento: mede a aceleracao em tempo real e classifica em baixo,
+medio ou alto. Da para iniciar, parar e salvar a medicao.
 
-Histórico de medições salvas.
+Magnetometro: mostra os eixos X, Y e Z em microtesla, a intensidade
+total e a data da ultima leitura, com botao para atualizar.
+
+Historico: lista as medicoes salvas com nivel, intensidade em g,
+valores dos eixos e data.
+
+Telas
+
+Inicio: botoes para Movimento, Magnetometro e Historico.
+
+Movimento (components/acelerometro.js): usa o Accelerometer do
+expo-sensors. A magnitude e calculada como raiz de x2 + y2 + z2.
+Ate 1.15 g e baixo, ate 1.6 g e medio, acima disso e alto.
+O intervalo de leitura e de 300 ms.
+
+Magnetometro (components/magenetometro.js): usa o Magnetometer do
+expo-sensors com intervalo de 500 ms. Se o sensor nao existir no
+aparelho, a tela avisa que ele esta indisponivel.
+
+Historico (components/Historico.js): recebe a lista de medicoes do
+App.js e mostra cada item salvo.
 
 Tecnologias
-React Native / Expo
 
-expo-sensors (Accelerometer, Magnetometer)
+React Native com Expo (SDK 57)
 
-@expo/vector-icons
+expo-sensors, versao 57.0.3 (Accelerometer e Magnetometer)
+
+@expo/vector-icons para os icones
+
+Estrutura
+
+App.js: controle da tela atual (Inicio, Som, Localizacao, Historico)
+e da lista de medicoes.
+
+components/Inicio.js: tela inicial com a navegacao.
+
+components/acelerometro.js: medicao de movimento.
+
+components/magenetometro.js: leitura do campo magnetico.
+
+components/Historico.js: lista de medicoes salvas.
+
+styles/Estilos.js: estilos e cores do aplicativo.
+
+
