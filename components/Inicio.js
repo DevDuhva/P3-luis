@@ -5,28 +5,28 @@ import Estilos, { Cores } from "../styles/Estilos";
 export default function Inicio({ irPara }) {
   return (
     <View style={Estilos.container}>
-      <Ionicons name="volume-high" size={64} color={Cores.primaria} />
+      <Ionicons name="move" size={64} color={Cores.primaria} />
 
-      <Text style={Estilos.tituloTela}>Medição de Som</Text>
+      <Text style={Estilos.tituloTela}>Sensores de Movimento</Text>
       <Text style={Estilos.subtitulo}>
-        Meça a intensidade do som pelo microfone do celular e veja onde a
-        medição foi realizada.
+        Meça a intensidade do movimento pelo acelerômetro e veja o campo
+        magnético ao redor com o magnetômetro.
       </Text>
 
       <TouchableOpacity
         style={[Estilos.botao, Estilos.botaoPrimario]}
         onPress={() => irPara("Som")}
       >
-        <Ionicons name="volume-high" size={22} color={Cores.fundo} />
-        <Text style={[Estilos.textoBotao, Estilos.textoBotaoPrimario]}>Som</Text>
+        <Ionicons name="move" size={22} color={Cores.fundo} />
+        <Text style={[Estilos.textoBotao, Estilos.textoBotaoPrimario]}>Movimento</Text>
       </TouchableOpacity>
 
       <TouchableOpacity
         style={[Estilos.botao, Estilos.botaoSecundario]}
         onPress={() => irPara("Localizacao")}
       >
-        <Ionicons name="location" size={22} color={Cores.texto} />
-        <Text style={Estilos.textoBotao}>Localização</Text>
+        <Ionicons name="compass" size={22} color={Cores.texto} />
+        <Text style={Estilos.textoBotao}>Magnetômetro</Text>
       </TouchableOpacity>
 
       <TouchableOpacity

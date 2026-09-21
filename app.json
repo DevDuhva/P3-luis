@@ -1,22 +1,17 @@
 {
   "expo": {
-    "name": "Medição de Som",
+    "name": "Sensores de Movimento",
     "slug": "medicao-de-som",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "dark",
     "plugins": [
-      "expo-audio",
       "expo-font",
       "expo-asset"
     ],
     "ios": {
-      "supportsTablet": true,
-      "infoPlist": {
-        "NSMicrophoneUsageDescription": "Permita o acesso ao microfone para medir a intensidade do som.",
-        "NSLocationWhenInUseUsageDescription": "Permita o acesso à localização para mostrar onde a medição foi realizada."
-      }
+      "supportsTablet": true
     },
     "android": {
       "adaptiveIcon": {
@@ -25,12 +20,7 @@
         "backgroundImage": "./assets/android-icon-background.png",
         "monochromeImage": "./assets/android-icon-monochrome.png"
       },
-      "permissions": [
-        "android.permission.RECORD_AUDIO",
-        "android.permission.MODIFY_AUDIO_SETTINGS",
-        "android.permission.FOREGROUND_SERVICE",
-        "android.permission.FOREGROUND_SERVICE_MEDIA_PLAYBACK"
-      ],
+      "permissions": [],
       "package": "com.durva.medicaodesom"
     },
     "web": {

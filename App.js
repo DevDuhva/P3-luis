@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { StatusBar } from "expo-status-bar";
 import Inicio from "./components/Inicio";
-import Som from "./components/Som";
-import Localizacao from "./components/Localizacao";
+import Acelerometro from "./components/acelerometro";
+import Magnetometro from "./components/magenetometro";
 import Historico from "./components/Historico";
 
 export default function App() {
@@ -16,9 +16,9 @@ export default function App() {
   function renderizarTela() {
     switch (tela) {
       case "Som":
-        return <Som voltar={() => setTela("Inicio")} salvar={salvarMedicao} />;
+        return <Acelerometro voltar={() => setTela("Inicio")} salvar={salvarMedicao} />;
       case "Localizacao":
-        return <Localizacao voltar={() => setTela("Inicio")} />;
+        return <Magnetometro voltar={() => setTela("Inicio")} />;
       case "Historico":
         return <Historico voltar={() => setTela("Inicio")} medicoes={medicoes} />;
       default:

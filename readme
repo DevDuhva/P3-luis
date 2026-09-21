@@ -1,25 +1,16 @@
-Sound & Location Meter
-Aplicativo em React Native com Expo para medição de intensidade sonora, captura de geolocalização e gerenciamento de histórico.
+Motion & Magnetometer Sensors
+Aplicativo em React Native com Expo para medição de intensidade de movimento, leitura do campo magnético e gerenciamento de histórico.
 
 Funcionalidades
-Medição de som ambiente (baixo, médio, alto) via microfone.
+Medição de intensidade de movimento (baixo, médio, alto) via acelerômetro.
 
-Captura de latitude e longitude.
+Leitura dos eixos X, Y, Z e intensidade total do campo magnético via magnetômetro.
 
 Histórico de medições salvas.
 
 Tecnologias
 React Native / Expo
 
-expo-audio
-
-expo-location
+expo-sensors (Accelerometer, Magnetometer)
 
 @expo/vector-icons
-
-Permissões
-O aplicativo solicita permissão de uso para:
-
-Microfone
-
-Localização

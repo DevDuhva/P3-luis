@@ -3,13 +3,13 @@ import { Ionicons } from "@expo/vector-icons";
 import Estilos, { Cores } from "../styles/Estilos";
 
 const detalhesNivel = {
-  Baixo: { cor: Cores.verde, icone: "volume-low" },
-  Médio: { cor: Cores.primaria, icone: "volume-medium" },
-  Alto: { cor: Cores.vermelho, icone: "volume-high" },
+  Baixo: { cor: Cores.verde, icone: "pause-circle" },
+  Médio: { cor: Cores.primaria, icone: "walk" },
+  Alto: { cor: Cores.vermelho, icone: "flash" },
 };
 
-function formatarCoordenada(valor) {
-  return valor != null ? valor.toFixed(6) : "—";
+function formatarValor(valor, casas = 3) {
+  return valor != null ? valor.toFixed(casas) : "—";
 }
 
 export default function Historico({ voltar, medicoes }) {
@@ -25,7 +25,7 @@ export default function Historico({ voltar, medicoes }) {
           {medicoes.map((medicao, indice) => {
             const detalhe = detalhesNivel[medicao.nivel] || {
               cor: Cores.textoSuave,
-              icone: "volume-mute",
+              icone: "pause-circle",
             };
 
             return (
@@ -38,11 +38,19 @@ export default function Historico({ voltar, medicoes }) {
                 </View>
 
                 <Text style={local.itemTexto}>
-                  Localização:{" "}
-                  {medicao.latitude != null
-                    ? `${formatarCoordenada(medicao.latitude)}, ${formatarCoordenada(
-                        medicao.longitude
-                      )}`
+                  Intensidade:{" "}
+                  {medicao.magnitude != null
+                    ? `${formatarValor(medicao.magnitude)} g`
+                    : "Não disponível"}
+                </Text>
+
+                <Text style={local.itemTexto}>
+                  Eixos:{" "}
+                  {medicao.x != null
+                    ? `x ${formatarValor(medicao.x, 2)}, y ${formatarValor(
+                        medicao.y,
+                        2
+                      )}, z ${formatarValor(medicao.z, 2)}`
                     : "Não disponível"}
                 </Text>
 
